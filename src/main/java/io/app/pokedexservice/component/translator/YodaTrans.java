@@ -11,6 +11,7 @@ import io.app.pokedexservice.util.TranslationUtil;
 public class YodaTrans implements Translator {
   @Autowired
   public RestTemplate restTemplate;
+  //We can fetch urls from a properties file
   String translatorUrl = "https://api.funtranslations.com/translate/yoda.json";
 
   public Translation translate(String text) {

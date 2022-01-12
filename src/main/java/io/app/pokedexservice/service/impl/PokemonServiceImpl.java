@@ -23,6 +23,7 @@ public class PokemonServiceImpl implements PokemonService {
   @Autowired
   public TranslatorFactory translatorFactory;
 
+
   @Override
   public PokeDexResp getBasicInfo(String pokemon) {
     Pokemon pokemonResp = getPokemon(pokemon);
@@ -53,7 +54,7 @@ public class PokemonServiceImpl implements PokemonService {
   }
 
   protected Pokemon getPokemon(String pokemon) {
-    return restTemplate.getForObject("https://pokeapi.co/api/v2/pokemon-species/" + pokemon, Pokemon.class);
+      return restTemplate.getForObject("https://pokeapi.co/api/v2/pokemon-species/" + pokemon, Pokemon.class);
   }
 
   @Override

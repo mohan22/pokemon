@@ -18,12 +18,25 @@ public class PokemonController {
 
   @RequestMapping(value = "/{name}", method = RequestMethod.GET)
   public PokeDexResp getPokemon(@PathVariable("name") String name) {
-    return pokemonService.getBasicInfo(name);
+    try {
+      return pokemonService.getBasicInfo(name);
+    } catch (Exception ex) {
+      PokeDexResp pokeDexResp = new PokeDexResp();
+      pokeDexResp.setError(ex.getMessage());
+      return pokeDexResp;
+    }
+
   }
 
   @RequestMapping(value = "/translated/{name}", method = RequestMethod.GET)
   public PokeDexResp getTranslatedPokemon(@PathVariable("name") String name) {
-    return pokemonService.getTranslatedInfo(name);
+    try {
+      return pokemonService.getTranslatedInfo(name);
+    } catch (Exception ex) {
+      PokeDexResp pokeDexResp = new PokeDexResp();
+      pokeDexResp.setError(ex.getMessage());
+      return pokeDexResp;
+    }
   }
 
 }

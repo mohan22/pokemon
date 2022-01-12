@@ -1,5 +1,6 @@
 package io.app.pokedexservice.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -7,6 +8,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.io.Serializable;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class PokeDexResp implements Serializable {
   @JsonProperty("name")
   private String name;
@@ -15,7 +17,10 @@ public class PokeDexResp implements Serializable {
   @JsonProperty("habitat")
   private String habitat;
   @JsonProperty("isLegendary")
-  private boolean isLegendary;
+  private Boolean isLegendary;
+  @JsonProperty("error")
+  private String error;
+
 
   public String getName() {
     return name;
@@ -41,12 +46,20 @@ public class PokeDexResp implements Serializable {
     this.habitat = habitat;
   }
 
-  public boolean getIsLegendary() {
+  public Boolean getIsLegendary() {
     return isLegendary;
   }
 
-  public void setIsLegendary(boolean legendary) {
+  public void setIsLegendary(Boolean legendary) {
     isLegendary = legendary;
+  }
+
+  public String getError() {
+    return error;
+  }
+
+  public void setError(String error) {
+    this.error = error;
   }
 
   @Override
