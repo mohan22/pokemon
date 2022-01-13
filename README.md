@@ -26,6 +26,14 @@ java -jar D:\learning\springboot\pokedex-service\build\libs\pokedex-service-0.0.
 ```
 
 Tomcat server starts on port : ```5000```. Update ```server.port``` property of **Application.properties** file for changing the port number.
+
+
+## Open Items
+1. API tests
+2. Additional unit tests for service layer.
+3. Swagger API documentation
+4. Docker image creation
+
 ## Copyright
 
 Released under the Apache License 2.0. See the [LICENSE](https://github.com/codecentric/springboot-sample-app/blob/master/LICENSE) file.

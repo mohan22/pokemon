@@ -34,7 +34,7 @@ public class PokemonServiceImpl implements PokemonService {
 
     List<FlavourTextEntry> flavourTextEntries = pokemonResp.getFlavourTextEntries();
     FlavourTextEntry flavourTextEntry = new FlavourTextEntry();
-    //Since there may be multiple descriptions available, we are taking first English description value
+    //Assumption : Since there may be multiple descriptions available, we are taking first English description value
     if (flavourTextEntries != null && !flavourTextEntries.isEmpty()) {
       flavourTextEntry = flavourTextEntries.stream()
           .filter(flavourTextEntry1 ->
